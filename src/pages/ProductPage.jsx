@@ -18,10 +18,10 @@ export default function ProductPage() {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-brand-dark flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 dark:bg-brand-dark flex items-center justify-center">
         <div className="text-center">
           <p className="text-6xl mb-4">🔍</p>
-          <h2 className="font-display text-4xl text-white mb-4">PRODUCT NOT FOUND</h2>
+          <h2 className="font-display text-4xl text-gray-900 dark:text-white mb-4">PRODUCT NOT FOUND</h2>
           <Link to="/explore" className="text-brand-cyan hover:underline font-body">← Back to Explore</Link>
         </div>
       </div>
@@ -42,12 +42,12 @@ export default function ProductPage() {
   const allImages = product.images?.length ? product.images : [product.image];
 
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-gray-50 dark:bg-brand-dark">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Back button */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-brand-muted hover:text-brand-cyan transition-colors mb-8 font-body text-sm"
+          className="flex items-center gap-2 text-gray-500 dark:text-brand-muted hover:text-brand-cyan transition-colors mb-8 font-body text-sm"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -59,7 +59,7 @@ export default function ProductPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Gallery */}
           <div>
-            <div className="relative bg-brand-card border border-brand-border rounded-2xl overflow-hidden aspect-[4/3] mb-3">
+            <div className="relative bg-white dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-2xl overflow-hidden aspect-[4/3] mb-3">
               <img
                 src={allImages[selectedImage]}
                 alt={product.name}
@@ -80,7 +80,7 @@ export default function ProductPage() {
                   key={i}
                   onClick={() => setSelectedImage(i)}
                   className={`w-16 h-16 rounded-xl overflow-hidden border-2 transition-all ${
-                    selectedImage === i ? "border-brand-cyan" : "border-brand-border"
+                    selectedImage === i ? "border-brand-cyan" : "border-gray-200 dark:border-brand-border"
                   }`}
                 >
                   <img src={img} alt="" className="w-full h-full object-cover"
@@ -94,7 +94,7 @@ export default function ProductPage() {
           {/* Info */}
           <div>
             <p className="text-brand-cyan text-xs font-mono uppercase tracking-widest mb-2">{product.brand}</p>
-            <h1 className="font-body text-3xl font-bold text-white leading-snug mb-3">{product.name}</h1>
+            <h1 className="font-body text-3xl font-bold text-gray-900 dark:text-white leading-snug mb-3">{product.name}</h1>
 
             {/* Rating & Sold */}
             <div className="flex items-center gap-4 mb-4">
@@ -106,9 +106,9 @@ export default function ProductPage() {
                     </svg>
                   ))}
                 </div>
-                <span className="text-brand-muted text-sm font-mono">{product.rating} ({product.reviews} reviews)</span>
+                <span className="text-gray-500 dark:text-brand-muted text-sm font-mono">{product.rating} ({product.reviews} reviews)</span>
               </div>
-              <span className="text-brand-muted text-sm font-mono">🔥 {product.sold}+ sold</span>
+              <span className="text-gray-500 dark:text-brand-muted text-sm font-mono">🔥 {product.sold}+ sold</span>
             </div>
 
             {/* Badges */}
@@ -120,7 +120,7 @@ export default function ProductPage() {
               }`}>
                 {product.condition}
               </span>
-              <span className="text-xs font-bold px-3 py-1 rounded-full font-mono bg-brand-border text-brand-muted">
+              <span className="text-xs font-bold px-3 py-1 rounded-full font-mono bg-gray-100 dark:bg-brand-border text-gray-500 dark:text-brand-muted">
                 🛡️ {product.warranty}
               </span>
             </div>
@@ -132,20 +132,20 @@ export default function ProductPage() {
                   {formatPrice(currentPrice)}
                 </span>
                 {disc > 0 && (
-                  <span className="text-brand-muted text-lg line-through font-mono">
+                  <span className="text-gray-500 dark:text-brand-muted text-lg line-through font-mono">
                     {formatPrice(product.originalPrice)}
                   </span>
                 )}
               </div>
               {variant?.priceAdd > 0 && (
-                <p className="text-brand-muted text-xs font-mono mt-1">+{formatPrice(variant.priceAdd)} for this configuration</p>
+                <p className="text-gray-500 dark:text-brand-muted text-xs font-mono mt-1">+{formatPrice(variant.priceAdd)} for this configuration</p>
               )}
             </div>
 
             {/* Variants */}
             {product.variants && product.variants.length > 1 && (
               <div className="mb-6">
-                <p className="text-brand-muted text-xs font-mono uppercase tracking-widest mb-2">Configuration</p>
+                <p className="text-gray-500 dark:text-brand-muted text-xs font-mono uppercase tracking-widest mb-2">Configuration</p>
                 <div className="flex flex-wrap gap-2">
                   {product.variants.map((v, i) => (
                     <button
@@ -154,7 +154,7 @@ export default function ProductPage() {
                       className={`px-4 py-2 rounded-xl text-sm font-mono border transition-all ${
                         selectedVariant === i
                           ? "bg-brand-cyan text-brand-dark border-brand-cyan"
-                          : "border-brand-border text-brand-muted hover:border-brand-cyan/50"
+                          : "border-gray-200 dark:border-brand-border text-gray-500 dark:text-brand-muted hover:border-brand-cyan/50"
                       }`}
                     >
                       {v.label}
@@ -168,50 +168,50 @@ export default function ProductPage() {
             {/* Quick Specs */}
             <div className="grid grid-cols-2 gap-2 mb-6">
               {product.ram && (
-                <div className="bg-brand-card border border-brand-border rounded-xl p-3">
-                  <p className="text-brand-muted text-xs font-mono">RAM</p>
-                  <p className="text-brand-light font-semibold font-body">{product.ram}GB</p>
+                <div className="bg-white dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl p-3">
+                  <p className="text-gray-500 dark:text-brand-muted text-xs font-mono">RAM</p>
+                  <p className="text-gray-800 dark:text-brand-light font-semibold font-body">{product.ram}GB</p>
                 </div>
               )}
               {product.storage && (
-                <div className="bg-brand-card border border-brand-border rounded-xl p-3">
-                  <p className="text-brand-muted text-xs font-mono">Storage</p>
-                  <p className="text-brand-light font-semibold font-body">{product.storage}GB SSD</p>
+                <div className="bg-white dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl p-3">
+                  <p className="text-gray-500 dark:text-brand-muted text-xs font-mono">Storage</p>
+                  <p className="text-gray-800 dark:text-brand-light font-semibold font-body">{product.storage}GB SSD</p>
                 </div>
               )}
               {product.processor && (
-                <div className="bg-brand-card border border-brand-border rounded-xl p-3 col-span-2">
-                  <p className="text-brand-muted text-xs font-mono">Processor</p>
-                  <p className="text-brand-light font-semibold font-body text-sm">{product.processor}</p>
+                <div className="bg-white dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl p-3 col-span-2">
+                  <p className="text-gray-500 dark:text-brand-muted text-xs font-mono">Processor</p>
+                  <p className="text-gray-800 dark:text-brand-light font-semibold font-body text-sm">{product.processor}</p>
                 </div>
               )}
               {product.screen && (
-                <div className="bg-brand-card border border-brand-border rounded-xl p-3">
-                  <p className="text-brand-muted text-xs font-mono">Screen</p>
-                  <p className="text-brand-light font-semibold font-body">{product.screen}</p>
+                <div className="bg-white dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl p-3">
+                  <p className="text-gray-500 dark:text-brand-muted text-xs font-mono">Screen</p>
+                  <p className="text-gray-800 dark:text-brand-light font-semibold font-body">{product.screen}</p>
                 </div>
               )}
               {product.battery && (
-                <div className="bg-brand-card border border-brand-border rounded-xl p-3">
-                  <p className="text-brand-muted text-xs font-mono">Battery</p>
-                  <p className="text-brand-light font-semibold font-body text-sm">{product.battery}</p>
+                <div className="bg-white dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl p-3">
+                  <p className="text-gray-500 dark:text-brand-muted text-xs font-mono">Battery</p>
+                  <p className="text-gray-800 dark:text-brand-light font-semibold font-body text-sm">{product.battery}</p>
                 </div>
               )}
             </div>
 
             {/* Quantity + Add to Cart */}
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex items-center gap-2 bg-brand-card border border-brand-border rounded-xl px-2">
+              <div className="flex items-center gap-2 bg-white dark:bg-brand-card border border-gray-200 dark:border-brand-border rounded-xl px-2">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-8 h-10 text-brand-muted hover:text-brand-cyan transition-colors text-lg"
+                  className="w-8 h-10 text-gray-500 dark:text-brand-muted hover:text-brand-cyan transition-colors text-lg"
                 >
                   −
                 </button>
-                <span className="text-white font-mono w-6 text-center">{quantity}</span>
+                <span className="text-gray-900 dark:text-white font-mono w-6 text-center">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="w-8 h-10 text-brand-muted hover:text-brand-cyan transition-colors text-lg"
+                  className="w-8 h-10 text-gray-500 dark:text-brand-muted hover:text-brand-cyan transition-colors text-lg"
                 >
                   +
                 </button>
@@ -220,7 +220,7 @@ export default function ProductPage() {
                 onClick={handleAddToCart}
                 className={`flex-1 py-3.5 rounded-xl font-display text-xl tracking-wider transition-all ${
                   addedFeedback
-                    ? "bg-emerald-500 text-white"
+                    ? "bg-emerald-500 text-gray-900 dark:text-white"
                     : "bg-brand-cyan text-brand-dark hover:brightness-110 shadow-lg shadow-brand-cyan/30"
                 }`}
               >
@@ -240,17 +240,17 @@ export default function ProductPage() {
         {/* Description & Full Specs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div>
-            <h2 className="font-display text-2xl text-white tracking-wider mb-4">DESCRIPTION</h2>
-            <p className="text-brand-muted font-body leading-relaxed">{product.description}</p>
+            <h2 className="font-display text-2xl text-gray-900 dark:text-white tracking-wider mb-4">DESCRIPTION</h2>
+            <p className="text-gray-500 dark:text-brand-muted font-body leading-relaxed">{product.description}</p>
           </div>
           {product.specs && (
             <div>
-              <h2 className="font-display text-2xl text-white tracking-wider mb-4">FULL SPECS</h2>
+              <h2 className="font-display text-2xl text-gray-900 dark:text-white tracking-wider mb-4">FULL SPECS</h2>
               <div className="space-y-2">
                 {Object.entries(product.specs).map(([key, val]) => (
-                  <div key={key} className="flex justify-between gap-4 py-2 border-b border-brand-border">
-                    <span className="text-brand-muted text-sm font-mono">{key}</span>
-                    <span className="text-brand-light text-sm font-body text-right">{val}</span>
+                  <div key={key} className="flex justify-between gap-4 py-2 border-b border-gray-200 dark:border-brand-border">
+                    <span className="text-gray-500 dark:text-brand-muted text-sm font-mono">{key}</span>
+                    <span className="text-gray-800 dark:text-brand-light text-sm font-body text-right">{val}</span>
                   </div>
                 ))}
               </div>
@@ -261,7 +261,7 @@ export default function ProductPage() {
         {/* Related products */}
         {related.length > 0 && (
           <div>
-            <h2 className="font-display text-3xl text-white tracking-wider mb-6">
+            <h2 className="font-display text-3xl text-gray-900 dark:text-white tracking-wider mb-6">
               YOU MAY <span className="text-brand-cyan">ALSO LIKE</span>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -272,15 +272,15 @@ export default function ProductPage() {
       </div>
 
       {/* Sticky bottom bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-brand-card/95 backdrop-blur-md border-t border-brand-border p-3 flex items-center justify-between gap-4 lg:hidden z-40">
+      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-brand-card/95 backdrop-blur-md border-t border-gray-200 dark:border-brand-border p-3 flex items-center justify-between gap-4 lg:hidden z-40">
         <div>
-          <p className="text-brand-muted text-xs font-mono">Total</p>
+          <p className="text-gray-500 dark:text-brand-muted text-xs font-mono">Total</p>
           <p className="text-brand-cyan font-display text-2xl">{formatPrice(currentPrice * quantity)}</p>
         </div>
         <button
           onClick={handleAddToCart}
           className={`flex-1 max-w-xs py-3 rounded-xl font-display text-lg tracking-wider transition-all ${
-            addedFeedback ? "bg-emerald-500 text-white" : "bg-brand-cyan text-brand-dark"
+            addedFeedback ? "bg-emerald-500 text-gray-900 dark:text-white" : "bg-brand-cyan text-brand-dark"
           }`}
         >
           {addedFeedback ? "✓ ADDED!" : "ADD TO CART"}

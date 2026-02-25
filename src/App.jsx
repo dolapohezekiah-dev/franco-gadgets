@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import { AdminProvider, useAdmin } from "./context/AdminContext";
+import { ThemeProvider } from "./context/ThemeContext";
 
 // Store
 import Header from "./components/Header";
@@ -84,6 +85,7 @@ function AppRoutes() {
 
 export default function App() {
   return (
+    <ThemeProvider>
     <BrowserRouter>
       <AdminProvider>
         <CartProvider>
@@ -91,5 +93,6 @@ export default function App() {
         </CartProvider>
       </AdminProvider>
     </BrowserRouter>
+    </ThemeProvider>
   );
 }
