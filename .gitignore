@@ -1,4 +1,5 @@
-/images
-/SUPABASE-SETUP-GUIDE.md
-/supabase-setup.sql
-/SUPABASE_SETUP.md
+node_modules/
+dist/
+.env
+.env.local
+.DS_Store

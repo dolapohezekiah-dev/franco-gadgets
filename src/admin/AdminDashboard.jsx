@@ -18,7 +18,7 @@ function StatCard({ title, value, sub, icon, color }) {
 }
 
 export default function AdminDashboard() {
-  const { adminProducts } = useAdmin();
+  const { adminProducts, productsLoading } = useAdmin();
   const products = adminProducts !== null ? adminProducts : staticProducts;
 
   const stats = useMemo(() => {
