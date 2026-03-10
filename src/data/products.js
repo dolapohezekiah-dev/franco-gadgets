@@ -53,7 +53,7 @@
 //
 // =============================================================
 
-export const WHATSAPP_NUMBER = "2348012345678"; // ← Change this to your WhatsApp number (with country code, no +)
+export const WHATSAPP_NUMBER = "2348136513488"; // ← Change this to your WhatsApp number (with country code, no +)
 export const STORE_NAME = "Franco Gadgets";
 export const STORE_TAGLINE = "Premium Gadgets. Real Deals.";
 export const DELIVERY_FEE = 3500; // Naira — set to 0 for free delivery

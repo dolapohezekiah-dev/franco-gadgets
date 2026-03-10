@@ -83,7 +83,7 @@ export default function CheckoutPage() {
     doc.setFontSize(9);
     doc.setFont("helvetica", "normal");
     doc.text("Thank you for shopping with Franco Gadgets!", 14, finalY + 30);
-    doc.text("WhatsApp: wa.me/2348012345678", 14, finalY + 37);
+    doc.text("WhatsApp: wa.me/2348136513488", 14, finalY + 37);
 
     doc.save(`FRANCO-Invoice-${Date.now()}.pdf`);
   };

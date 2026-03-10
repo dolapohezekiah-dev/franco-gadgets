@@ -40,7 +40,7 @@ create table if not exists products (
 
 create table if not exists settings (
   id            integer primary key default 1,  -- always just 1 row
-  whatsapp      text default '2348012345678',
+  whatsapp      text default '2348136513488',
   store_name    text default 'Franco Gadgets',
   tagline       text default 'Premium Gadgets. Real Deals.',
   delivery_fee  numeric default 3500,

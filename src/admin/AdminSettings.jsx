@@ -113,7 +113,7 @@ export default function AdminSettings() {
           {[
             { label: "Store Name", key: "storeName", placeholder: "Franco Gadgets" },
             { label: "Store Tagline", key: "tagline", placeholder: "Premium Gadgets. Real Deals." },
-            { label: "WhatsApp Number", key: "whatsapp", placeholder: "2348012345678", hint: "Include country code, no + sign." },
+            { label: "WhatsApp Number", key: "whatsapp", placeholder: "2348136513488", hint: "Include country code, no + sign." },
             { label: "Delivery Fee (₦)", key: "deliveryFee", placeholder: "3500", type: "number", hint: "Set to 0 for free delivery" },
           ].map(({ label, key, placeholder, hint, type }) => (
             <div key={key}>

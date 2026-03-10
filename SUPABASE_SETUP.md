@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS products (
 -- Settings table (single row for store config)
 CREATE TABLE IF NOT EXISTS settings (
   id            INTEGER PRIMARY KEY DEFAULT 1,
-  whatsapp      TEXT DEFAULT '2348012345678',
+  whatsapp      TEXT DEFAULT '2348136513488',
   store_name    TEXT DEFAULT 'Franco Gadgets',
   tagline       TEXT DEFAULT 'Premium Gadgets. Real Deals.',
   delivery_fee  NUMERIC DEFAULT 3500,

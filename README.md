@@ -128,7 +128,7 @@ condition: "New",     // or "UK Used"
 
 In `src/data/products.js`:
 ```js
-export const WHATSAPP_NUMBER = "2348012345678";
+export const WHATSAPP_NUMBER = "2348136513488";
 ```
 No `+` sign. Include country code. e.g., `+234 803 456 7890` → `2348034567890`
 

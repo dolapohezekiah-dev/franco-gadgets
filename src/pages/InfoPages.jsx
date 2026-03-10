@@ -142,7 +142,7 @@ export function ContactPage() {
     <PageWrapper title="CONTACT US" subtitle="Get In Touch">
       <div className="space-y-4">
         {[
-          { icon: "💬", title: "WhatsApp (Primary)", info: "+234 801 234 5678", sub: "Click to chat — fastest response", link: "https://wa.me/2348012345678" },
+          { icon: "💬", title: "WhatsApp (Primary)", info: "+234 813 651 3488", sub: "Click to chat — fastest response", link: "https://wa.me/2348136513488" },
           { icon: "📧", title: "Email", info: "hello@francogadgets.com", sub: "We reply within 24 hours" },
           { icon: "📍", title: "Location", info: "Lagos, Nigeria", sub: "Walk-in by appointment only" },
         ].map((c) => (
@@ -164,7 +164,7 @@ export function ContactPage() {
         <div className="bg-white dark:bg-brand-card border border-brand-cyan/20 rounded-xl p-5 text-center">
           <p className="text-gray-900 dark:text-white font-body mb-3">Ready to order? Chat with us directly!</p>
           <a
-            href="https://wa.me/2348012345678"
+            href="https://wa.me/2348136513488"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-gray-900 dark:text-white px-6 py-3 rounded-xl font-display text-lg tracking-wider transition-all"
